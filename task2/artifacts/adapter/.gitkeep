@@ -1,0 +1,4 @@
+# LoRA adapter weights go here after training.
+# Run: python -m src.train_lora
+# Then this directory will contain adapter_config.json, adapter_model.safetensors, etc.
+# If this directory is empty, inference falls back to base model with a warning.

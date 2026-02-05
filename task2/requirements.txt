@@ -1,0 +1,22 @@
+# Task 2 Recipe Chatbot — Windows/Linux
+# Python 3.10+
+
+# API
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+
+# HTTP client (CLI + tests)
+requests>=2.31.0
+
+# Model + LoRA (pinned for reproducibility; relax upper bound if your platform needs newer torch)
+torch>=2.1.0
+transformers>=4.37.0
+peft>=0.10.0
+accelerate>=0.26.0
+
+# Dataset (training + generation)
+datasets>=2.16.0
+
+# Tests
+pytest>=7.4.0

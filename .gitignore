@@ -1,0 +1,22 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# IDE (optional – remove if you want to track workspace)
+*.code-workspace

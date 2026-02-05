@@ -1,0 +1,2 @@
+# Optional: keep only final adapter, not checkpoints (smaller repo)
+artifacts/adapter/checkpoint-*/
