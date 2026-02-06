@@ -35,7 +35,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-First run of the API will download the base model from Hugging Face once.
+First run of the API will download the base model from Hugging Face once. 
+Internet is required for the first run.
 
 ## How to run
 
