@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```
 
 ## How to run
-
+# using the below command will by default infer data from data/Indian_Names.csv
 **Interactive:** `python -m src.cli` — then type a name. Use `top N` to change result count, `quit` or `exit` to exit.
 
 **CLI:**
@@ -40,6 +40,17 @@ python -m src.cli --name "Geetha B.S" --top_k 5
 python -m src.cli --name "Vignesh G.S" --json
 python -m src.cli --name "amal" --data data/names.csv
 ```
+# If the program has to be run via names.csv, follow these steeps:
+**Using the data folder:** `data/` includes two CSVs (each with a `name` or `Name` column):
+- **`data/Indian_Names.csv`** — larger set (~6.5k names); **default** for both CLI and interactive mode.
+- **`data/names.csv`** — smaller set (~300 names); good for quick tests.
+
+Use `--data` to choose which file:
+```bash
+python -m src.cli --name "Geetha B.S" --data data/Indian_Names.csv
+python -m src.cli --name "amal" --data data/names.csv
+```
+For interactive mode, pass `--data` when starting: `python -m src.cli --data data/names.csv`.
 
 **Tests:** `python run_tests.py` or `pytest tests/ -v`
 
