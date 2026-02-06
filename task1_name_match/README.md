@@ -31,7 +31,9 @@ pip install -r requirements.txt
 ```
 
 ## How to run
-# using the below command will by default infer data from data/Indian_Names.csv
+
+Commands below use the default data file `data/Indian_Names.csv` unless you pass `--data`.
+
 **Interactive:** `python -m src.cli` — then type a name. Use `top N` to change result count, `quit` or `exit` to exit.
 
 **CLI:**
@@ -40,7 +42,7 @@ python -m src.cli --name "Geetha B.S" --top_k 5
 python -m src.cli --name "Vignesh G.S" --json
 python -m src.cli --name "amal" --data data/names.csv
 ```
-# If the program has to be run via names.csv, follow these steeps:
+
 **Using the data folder:** `data/` includes two CSVs (each with a `name` or `Name` column):
 - **`data/Indian_Names.csv`** — larger set (~6.5k names); **default** for both CLI and interactive mode.
 - **`data/names.csv`** — smaller set (~300 names); good for quick tests.
@@ -62,6 +64,12 @@ For interactive mode, pass `--data` when starting: `python -m src.cli --data dat
 | `Geetha B.S` | Best: Geetha B S or equivalent; initials match. |
 | `Gita` | Best: Gita; Geetha/Geeta also score well (phonetic). |
 | `Vignesh Kumar R` | Best: Vignesh Kumar R; Vignesh K R next; Vignesh Kumar (no R) lower. |
+
+**Verification (sample run):** From `task1_name_match/` with venv activated, run:
+```bash
+python -m src.cli --name "Geetha B.S" --top_k 3 --data data/names.csv
+```
+You should see a ranked list with at least one match containing "Geetha" and scores (e.g. best match score in the 80–100 range). To run the full test suite: `python run_tests.py`.
 
 ## Project structure
 

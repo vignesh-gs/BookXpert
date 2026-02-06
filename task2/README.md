@@ -1,5 +1,7 @@
 # Task 2: Recipe Chatbot
 
+Note: If you've come from testing task 1, please deactivate the .venv of task1_name_match with the "deactivate" command before setting the venv here by following the below steps.
+
 Local recipe chatbot: you give ingredients (e.g. "egg, onion" or "I have rice and veggies, what can I make?"), it returns a recipe (name, ingredients, steps, time). Runs as an API and a small CLI. No external services.
 
 **The trained adapter is in `artifacts/adapter/`. You don’t need to run training—just install deps and run.**
@@ -41,7 +43,7 @@ First run of the API will download the base model from Hugging Face once.
 
 **API:** `python -m src.api` — leave it running. Listens on http://127.0.0.1:8000.
 
-**CLI:** In another terminal, `python -m src.cli_chat`. Type ingredients, press Enter. Type `quit` to exit. If the API isn’t running, the CLI can use local inference (needs the adapter).
+**CLI:** In another terminal, activate the venv on this folder `python -m src.cli_chat`. Type ingredients, press Enter. Type `quit` to exit. If the API isn’t running, the CLI can use local inference (needs the adapter).
 
 **Inference only (JSON):** `python -m src.infer --message "egg, onion"` — output is JSON with recipe_title, ingredients, steps, time_minutes, notes.
 
@@ -54,6 +56,12 @@ First run of the API will download the base model from Hugging Face once.
 | `banana, milk, oats` | Recipe like Banana Oat Smoothie; same JSON schema. |
 
 Response JSON: `query`, `normalized_ingredients`, `recipe_title`, `ingredients`, `steps`, `time_minutes`, `notes`. Exact text may vary; structure is fixed.
+
+**Verification (sample run):** From `task2/` with venv activated, run:
+```bash
+python -m src.infer --message "egg, onion"
+```
+You should get JSON with keys `recipe_title`, `ingredients`, `steps`, `time_minutes`, `notes` (and `query`, `normalized_ingredients`). Example snippet: `"recipe_title": "Masala Omelette"` (or similar). Full verification: `python run_tests.py`.
 
 ## Verification checklist
 

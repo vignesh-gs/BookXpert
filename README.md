@@ -16,6 +16,9 @@ You give ingredients (e.g. "egg, onion"); it returns a recipe. Runs as a local A
 **Go to:** [task2/](task2/)  
 **Setup and run:** See [task2/README.md](task2/README.md)
 
-## Setup
+## Prerequisites and setup
 
-Each task has its own README and `requirements.txt`. Open the task folder and follow that README.
+- **Task 1:** Python 3.x. No external services.
+- **Task 2:** Python 3.10+. On first run, the app downloads the base model from Hugging Face once (internet required); this is the only external step and is documented in [task2/README.md](task2/README.md).
+
+Each task has its own README and `requirements.txt`. Open the task folder, follow the setup steps there (venv + `pip install -r requirements.txt`), then use the run and verification instructions in that README.
